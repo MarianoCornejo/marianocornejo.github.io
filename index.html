@@ -92,11 +92,13 @@
       margin-bottom: 30px;
     }
     .section-image img {
-      display: block;        /* remove inline-block gaps */
-      max-width: 100%;       /* never exceed container’s width */
-      height: auto;          /* keep aspect ratio */
-      max-height: 400px;     /* if you still want a cap */
-      object-fit: contain;   /* show the whole image, letter-boxed if needed */
+      display: block;       /* elimina gaps de inline */
+      width: auto;          /* no fuerces el ancho completo */
+      max-width: 100%;      /* como mucho igual al contenedor */
+      height: auto;         /* mantiene proporción */
+      max-height: 400px;    /* si aún quieres límite de altura */
+      object-fit: contain;  /* que no recorte */
+      margin: 0 auto;       /* centrar por protocolo old-school */
       border-radius: 8px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
