@@ -46,11 +46,15 @@
       opacity: 0.7;
     }
 
+    nav {
+      display: flex;
+    }
     nav a {
       margin: 0 15px;
       text-decoration: none;
       color: #f0f0f0;
       transition: color 0.3s;
+      white-space: nowrap;
     }
     nav a:hover {
       color: #e63946;
@@ -90,15 +94,18 @@
 
     .section-image {
       margin-bottom: 30px;
+      /* opcional: centrar imagen si prefieres */
+      display: flex;
+      justify-content: center;
     }
     .section-image img {
-      display: block;       /* elimina gaps de inline */
-      width: auto;          /* no fuerces el ancho completo */
-      max-width: 100%;      /* como mucho igual al contenedor */
-      height: auto;         /* mantiene proporción */
-      max-height: 400px;    /* si aún quieres límite de altura */
-      object-fit: contain;  /* que no recorte */
-      margin: 0 auto;       /* centrar por protocolo old-school */
+      display: block;
+      width: auto;
+      max-width: 100%;
+      height: auto;
+      max-height: 400px;
+      object-fit: contain;
+      margin: 0 auto;
       border-radius: 8px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
@@ -124,8 +131,25 @@
     }
 
     @media (max-width: 768px) {
+      /* Hero adjustments */
       .hero h1 {
         font-size: 2.5rem;
+      }
+
+      /* Header/nav reflow */
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+      }
+      .logo {
+        margin-bottom: 10px;
+      }
+      nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: nowrap;
+        overflow-x: auto;
       }
       nav a {
         margin: 0 10px;
