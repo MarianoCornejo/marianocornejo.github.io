@@ -62,6 +62,7 @@
       --border-radius: 12px;
       --container-max: 1200px;
       --section-padding: clamp(60px, 10vw, 120px);
+      --header-height: 80px;
     }
 
     /* Modern Reset */
@@ -605,7 +606,7 @@
       }
 
       .hero {
-        padding-top: 180px; /* Much more padding on mobile due to stacked header */
+        padding-top: calc(120px + 2rem); /* Header min-height + extra space */
         padding-bottom: 40px;
       }
 
@@ -649,6 +650,12 @@
       nav {
         flex-wrap: wrap;
         justify-content: center;
+      }
+
+      /* Debug: Make header height more predictable on mobile */
+      header {
+        height: auto;
+        min-height: 120px; /* Fixed minimum height for mobile */
       }
     }
 
