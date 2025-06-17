@@ -44,18 +44,20 @@
   <style>
     /* CSS Custom Properties */
     :root {
-      --primary-bg: #1a1a1a;
-      --secondary-bg: #2a2a2a;
-      --accent-red: #e63946;
-      --accent-red-hover: #d62828;
-      --text-primary: #f0f0f0;
-      --text-secondary: #b0b0b0;
-      --text-muted: #777;
+      --primary-bg: #0a0f1c;
+      --secondary-bg: #1a2332;
+      --accent-blue: #4a9eff;
+      --accent-purple: #8b5cf6;
+      --accent-hover: #3b82f6;
+      --text-primary: #f8fafc;
+      --text-secondary: #cbd5e1;
+      --text-muted: #94a3b8;
       --border-color: rgba(255, 255, 255, 0.1);
       --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.3);
       --shadow-sharp: 0 8px 32px rgba(0, 0, 0, 0.4);
-      --gradient-primary: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-      --gradient-accent: linear-gradient(135deg, #e63946 0%, #d62828 100%);
+      --gradient-primary: linear-gradient(135deg, #0a0f1c 0%, #1a2332 100%);
+      --gradient-abstract: linear-gradient(135deg, #4a9eff 0%, #8b5cf6 50%, #06b6d4 100%);
+      --gradient-accent: linear-gradient(135deg, #4a9eff 0%, #8b5cf6 100%);
       --transition-fast: 0.2s ease;
       --transition-medium: 0.4s ease;
       --transition-slow: 0.6s ease;
@@ -140,7 +142,7 @@
     }
 
     .logo .x {
-      color: var(--accent-red);
+      color: var(--accent-blue);
       font-style: italic;
       transform: rotate(-8deg);
       display: inline-block;
@@ -188,7 +190,7 @@
     }
 
     nav a:hover {
-      color: var(--accent-red);
+      color: var(--accent-blue);
       transform: translateY(-1px);
     }
 
@@ -229,8 +231,9 @@
       right: 0;
       bottom: 0;
       background: 
-        radial-gradient(circle at 20% 80%, rgba(230, 57, 70, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(230, 57, 70, 0.05) 0%, transparent 50%);
+        radial-gradient(circle at 20% 80%, rgba(74, 158, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.03) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -245,7 +248,7 @@
       font-weight: 700;
       margin-bottom: 1.5rem;
       letter-spacing: -0.02em;
-      background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-red) 100%);
+      background: var(--gradient-abstract);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -301,8 +304,8 @@
     }
 
     .btn-secondary:hover {
-      border-color: var(--accent-red);
-      color: var(--accent-red);
+      border-color: var(--accent-blue);
+      color: var(--accent-blue);
       transform: translateY(-2px);
     }
 
@@ -364,7 +367,7 @@
     .service-card:hover {
       transform: translateY(-4px);
       box-shadow: var(--shadow-sharp);
-      border-color: var(--accent-red);
+      border-color: var(--accent-blue);
     }
 
     .service-card:hover::before {
@@ -404,7 +407,7 @@
 
     .tech-tag {
       background: rgba(230, 57, 70, 0.1);
-      color: var(--accent-red);
+      color: var(--accent-blue);
       padding: 0.25rem 0.75rem;
       border-radius: 20px;
       font-size: 0.875rem;
@@ -490,7 +493,7 @@
     .stat-number {
       font-size: 2.5rem;
       font-weight: 700;
-      color: var(--accent-red);
+      color: var(--accent-blue);
       display: block;
     }
 
@@ -537,7 +540,7 @@
 
     .form-input:focus, .form-textarea:focus {
       outline: none;
-      border-color: var(--accent-red);
+      border-color: var(--accent-blue);
       box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.1);
     }
 
@@ -575,7 +578,7 @@
     }
 
     .footer-section a:hover {
-      color: var(--accent-red);
+      color: var(--accent-blue);
     }
 
     .footer-bottom {
@@ -981,7 +984,7 @@
           </p>
           <p>
             <strong>Email:</strong> 
-            <a href="mailto:mcornejo@abstraxlab.com" style="color: var(--accent-red); text-decoration: none;">
+            <a href="mailto:mcornejo@abstraxlab.com" style="color: var(--accent-blue); text-decoration: none;">
               mcornejo@abstraxlab.com
             </a>
           </p>
