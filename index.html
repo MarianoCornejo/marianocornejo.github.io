@@ -4,25 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AbstraX Lab - Enterprise Software Solutions | iOS, Web, AI Development</title>
-
+  
   <!-- SEO Meta Tags -->
   <meta name="description" content="AbstraX Lab delivers enterprise-grade software solutions including iOS apps, web development, AI/ML integration, and backend systems. 11+ years of proven expertise serving Fortune 500 standards." />
   <meta name="keywords" content="software development, iOS apps, web development, AI ML, backend systems, enterprise solutions, software outsourcing" />
   <meta name="author" content="AbstraX Lab" />
   <meta name="robots" content="index, follow" />
-
+  
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="AbstraX Lab - Enterprise Software Solutions" />
   <meta property="og:description" content="Transform your ideas into enterprise-grade software solutions with 11+ years of proven expertise." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://marianocornejo.github.io" />
   <meta property="og:site_name" content="AbstraX Lab" />
-
+  
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="AbstraX Lab - Enterprise Software Solutions" />
   <meta name="twitter:description" content="Transform your ideas into enterprise-grade software solutions with 11+ years of proven expertise." />
-
+  
   <!-- Structured Data -->
   <script type="application/ld+json">
   {
@@ -36,11 +36,11 @@
     "sameAs": []
   }
   </script>
-
+  
   <!-- Preload critical resources -->
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" as="style" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-
+  
   <style>
     /* CSS Custom Properties */
     :root {
@@ -62,8 +62,6 @@
       --border-radius: 12px;
       --container-max: 1200px;
       --section-padding: clamp(60px, 10vw, 120px);
-
-      /* NEW → se usará para reservar espacio al header    */
       --header-height: 80px;
     }
 
@@ -76,9 +74,8 @@
 
     html {
       scroll-behavior: smooth;
-      /* NEW → evita que los anclajes queden ocultos        */
-      scroll-padding-top: var(--header-height);
       font-size: 16px;
+      scroll-padding-top: var(--header-height);
     }
 
     body {
@@ -89,11 +86,27 @@
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      /* NEW → reserva espacio para el header fijo          */
       padding-top: var(--header-height);
     }
 
-    /* … (todo tu CSS intermedio permanece igual) … */
+    /* Typography Scale */
+    .text-xs { font-size: 0.75rem; line-height: 1.4; }
+    .text-sm { font-size: 0.875rem; line-height: 1.5; }
+    .text-base { font-size: 1rem; line-height: 1.6; }
+    .text-lg { font-size: 1.125rem; line-height: 1.6; }
+    .text-xl { font-size: 1.25rem; line-height: 1.5; }
+    .text-2xl { font-size: 1.5rem; line-height: 1.4; }
+    .text-3xl { font-size: 1.875rem; line-height: 1.3; }
+    .text-4xl { font-size: 2.25rem; line-height: 1.2; }
+    .text-5xl { font-size: 3rem; line-height: 1.1; }
+    .text-6xl { font-size: 3.75rem; line-height: 1; }
+
+    /* Container */
+    .container {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 clamp(20px, 4vw, 40px);
+    }
 
     /* Header */
     header {
@@ -108,9 +121,97 @@
       transition: var(--transition-medium);
     }
 
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+
+    .logo {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      transition: var(--transition-fast);
+    }
+
+    .logo:hover {
+      transform: translateY(-1px);
+    }
+
+    .logo .x {
+      color: var(--accent-red);
+      font-style: italic;
+      transform: rotate(-8deg);
+      display: inline-block;
+      text-shadow: 0 2px 4px rgba(230, 57, 70, 0.3);
+      margin: 0 2px;
+      transition: var(--transition-fast);
+    }
+
+    .logo:hover .x {
+      transform: rotate(-8deg) scale(1.1);
+      text-shadow: 0 4px 8px rgba(230, 57, 70, 0.5);
+    }
+
+    .logo .lab {
+      font-size: 0.6em;
+      vertical-align: super;
+      opacity: 0.8;
+      font-weight: 400;
+    }
+
+    /* Navigation */
+    nav {
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-primary);
+      font-weight: 500;
+      position: relative;
+      transition: var(--transition-fast);
+      padding: 0.5rem 0;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gradient-accent);
+      transition: var(--transition-fast);
+    }
+
+    nav a:hover {
+      color: var(--accent-red);
+      transform: translateY(-1px);
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* Progress Indicator */
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: var(--gradient-accent);
+      transform-origin: left;
+      transform: scaleX(0);
+      transition: transform 0.1s ease;
+      z-index: 1001;
+    }
+
     /* Hero Section */
     .hero {
-      min-height: 100vh;
+      min-height: calc(100vh - var(--header-height));
       display: flex;
       align-items: center;
       justify-content: center;
@@ -118,47 +219,482 @@
       position: relative;
       background: var(--gradient-primary);
       overflow: hidden;
-      /* UPDATED → usa la variable y un extra de aire       */
-      padding-top: calc(var(--header-height) + 40px);
     }
 
-    /* … (resto de tu CSS sin cambios) … */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 80%, rgba(230, 57, 70, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(230, 57, 70, 0.05) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      animation: fadeInUp 1s ease;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 6vw, 4.5rem);
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-red) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.1;
+    }
+
+    .hero .subtitle {
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      color: var(--text-secondary);
+      max-width: 700px;
+      margin: 0 auto 3rem;
+      font-weight: 400;
+    }
+
+    /* CTA Buttons */
+    .cta-group {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      text-decoration: none;
+      border-radius: var(--border-radius);
+      font-weight: 600;
+      font-size: 1rem;
+      transition: var(--transition-fast);
+      cursor: pointer;
+      border: none;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--gradient-accent);
+      color: white;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sharp);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text-primary);
+      border: 2px solid var(--border-color);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent-red);
+      color: var(--accent-red);
+      transform: translateY(-2px);
+    }
+
+    /* Sections */
+    .section {
+      padding: var(--section-padding) 0;
+      position: relative;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .section-subtitle {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Service Cards */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .service-card {
+      background: var(--secondary-bg);
+      border-radius: var(--border-radius);
+      padding: 2rem;
+      border: 1px solid var(--border-color);
+      transition: var(--transition-medium);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--gradient-accent);
+      transform: scaleX(0);
+      transition: var(--transition-medium);
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-sharp);
+      border-color: var(--accent-red);
+    }
+
+    .service-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .service-icon {
+      width: 60px;
+      height: 60px;
+      background: var(--gradient-accent);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+    }
+
+    .service-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .service-description {
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tech-tag {
+      background: rgba(230, 57, 70, 0.1);
+      color: var(--accent-red);
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.875rem;
+      font-family: 'JetBrains Mono', monospace;
+      border: 1px solid rgba(230, 57, 70, 0.2);
+    }
+
+    /* Technology Showcase */
+    .tech-showcase {
+      background: var(--secondary-bg);
+      border-radius: var(--border-radius);
+      padding: 3rem 2rem;
+      text-align: center;
+      margin: 3rem 0;
+    }
+
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .tech-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      transition: var(--transition-fast);
+    }
+
+    .tech-item:hover {
+      transform: translateY(-2px);
+    }
+
+    .tech-logo {
+      width: 48px;
+      height: 48px;
+      background: var(--gradient-accent);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: white;
+    }
+
+    .tech-name {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* About Section */
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      margin-top: 3rem;
+    }
+
+    .about-text {
+      font-size: 1.125rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 1.5rem;
+      background: var(--secondary-bg);
+      border-radius: var(--border-radius);
+      border: 1px solid var(--border-color);
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--accent-red);
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Contact Section */
+    .contact-content {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .form-label {
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+
+    .form-input, .form-textarea {
+      padding: 1rem;
+      background: var(--secondary-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius);
+      color: var(--text-primary);
+      font-family: inherit;
+      transition: var(--transition-fast);
+    }
+
+    .form-input:focus, .form-textarea:focus {
+      outline: none;
+      border-color: var(--accent-red);
+      box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.1);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--secondary-bg);
+      border-top: 1px solid var(--border-color);
+      padding: 3rem 0 2rem;
+      text-align: center;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-section h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .footer-section p, .footer-section a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: var(--transition-fast);
+    }
+
+    .footer-section a:hover {
+      color: var(--accent-red);
+    }
+
+    .footer-bottom {
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-color);
+      color: var(--text-muted);
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease forwards;
+    }
 
     /* Responsive Design */
     @media (max-width: 768px) {
-      /* NEW → ajusta la variable para móvil                */
-      :root { --header-height: 120px; }
-
-      nav { gap: 1rem; }
+      nav {
+        gap: 1rem;
+      }
 
       .hero {
-        /* UPDATED → respeta la nueva variable               */
-        padding-top: calc(var(--header-height) + 2rem);
+        padding-top: 180px; /* Much more padding on mobile due to stacked header */
         padding-bottom: 40px;
       }
 
-      /* resto de reglas existentes … */
+      .hero-content {
+        padding: 0 1rem;
+      }
+
+      .cta-group {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .btn {
+        min-width: 200px;
+        justify-content: center;
+      }
+
+      .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .tech-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .header-content {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem 0;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
     }
 
     /* iPhone XR and similar devices */
     @media (max-width: 414px) and (max-height: 896px) {
       .hero {
-        /* UPDATED → usa la variable                         */
-        padding-top: calc(var(--header-height) + 100px);
+        padding-top: 220px; /* Specific fix for iPhone XR dimensions */
       }
     }
 
     @media (max-width: 480px) {
       .hero {
-        /* UPDATED → usa la variable                         */
-        padding-top: calc(var(--header-height) + 120px);
+        padding-top: 200px; /* Extra padding for smaller screens */
       }
 
-      /* resto de reglas existentes … */
+      .hero h1 {
+        font-size: clamp(2rem, 8vw, 2.8rem); /* Smaller title on very small screens */
+        line-height: 1.2;
+        margin-bottom: 1rem;
+      }
+
+      .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .service-card {
+        padding: 1.5rem;
+      }
+    }
+
+    /* Utility Classes */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
     }
   </style>
 </head>
-
 <body>
   <!-- Progress Bar -->
   <div class="progress-bar" id="progressBar"></div>
@@ -186,8 +722,8 @@
       <div class="hero-content">
         <h1>Enterprise Software Solutions</h1>
         <p class="subtitle">
-          We transform complex business challenges into elegant, scalable software solutions.
-          With 11+ years of proven expertise across Fortune 500 standards, we deliver
+          We transform complex business challenges into elegant, scalable software solutions. 
+          With 11+ years of proven expertise across Fortune 500 standards, we deliver 
           iOS applications, web platforms, AI integration, and robust backend systems.
         </p>
         <div class="cta-group">
@@ -198,10 +734,294 @@
     </div>
   </section>
 
-  <!-- … el resto del documento HTML permanece igual … -->
+  <!-- About Section -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">About AbstraX Lab</h2>
+        <p class="section-subtitle">
+          Delivering enterprise-grade software solutions with precision, innovation, and unwavering quality standards.
+        </p>
+      </div>
+      
+      <div class="about-content">
+        <div class="about-text">
+          <p>
+            With over a decade of software engineering excellence, AbstraX Lab specializes in transforming 
+            abstract concepts into robust, production-ready solutions. Our expertise spans mobile application 
+            development, web platforms, artificial intelligence integration, and scalable backend architectures.
+          </p>
+          <br>
+          <p>
+            We pride ourselves on delivering Fortune 500-quality standards while maintaining the agility 
+            and personal attention of a boutique consultancy. Every project benefits from our deep technical 
+            expertise, proven methodologies, and commitment to long-term partnership success.
+          </p>
+        </div>
+        
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="stat-number">11+</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">50+</span>
+            <span class="stat-label">Projects Delivered</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Client Satisfaction</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">24/7</span>
+            <span class="stat-label">Support Available</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-subtitle">
+          Comprehensive software development services tailored to enterprise requirements and modern technology standards.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">📱</div>
+          <h3 class="service-title">iOS Application Development</h3>
+          <p class="service-description">
+            Native iOS applications built with SwiftUI, Combine, and modern architectural patterns. 
+            From concept to App Store deployment with enterprise-grade security and performance.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-tag">Swift</span>
+            <span class="tech-tag">SwiftUI</span>
+            <span class="tech-tag">Combine</span>
+            <span class="tech-tag">Core Data</span>
+            <span class="tech-tag">CloudKit</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🌐</div>
+          <h3 class="service-title">Web Development</h3>
+          <p class="service-description">
+            Modern web applications using cutting-edge frameworks and technologies. 
+            Responsive, accessible, and performant solutions that scale with your business needs.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Next.js</span>
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">Tailwind</span>
+            <span class="tech-tag">Node.js</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🤖</div>
+          <h3 class="service-title">AI & Machine Learning</h3>
+          <p class="service-description">
+            Integrate artificial intelligence and machine learning capabilities into your applications. 
+            From natural language processing to computer vision and predictive analytics.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">TensorFlow</span>
+            <span class="tech-tag">PyTorch</span>
+            <span class="tech-tag">OpenAI</span>
+            <span class="tech-tag">Hugging Face</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">⚙️</div>
+          <h3 class="service-title">Backend Systems</h3>
+          <p class="service-description">
+            Robust, scalable backend architectures designed for high availability and performance. 
+            RESTful APIs, microservices, and cloud-native solutions.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">PostgreSQL</span>
+            <span class="tech-tag">MongoDB</span>
+            <span class="tech-tag">Docker</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">☁️</div>
+          <h3 class="service-title">Cloud & DevOps</h3>
+          <p class="service-description">
+            Complete cloud infrastructure setup and DevOps pipeline implementation. 
+            Automated deployment, monitoring, and scaling solutions for enterprise applications.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-tag">AWS</span>
+            <span class="tech-tag">Azure</span>
+            <span class="tech-tag">Kubernetes</span>
+            <span class="tech-tag">Terraform</span>
+            <span class="tech-tag">GitHub Actions</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🔒</div>
+          <h3 class="service-title">Enterprise Consulting</h3>
+          <p class="service-description">
+            Strategic technology consulting for digital transformation initiatives. 
+            Architecture review, technology selection, and implementation roadmaps.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-tag">Architecture</span>
+            <span class="tech-tag">Security</span>
+            <span class="tech-tag">Performance</span>
+            <span class="tech-tag">Scalability</span>
+            <span class="tech-tag">Strategy</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technology Showcase -->
+  <section id="technologies" class="section">
+    <div class="container">
+      <div class="tech-showcase">
+        <h2 class="section-title">Technology Stack</h2>
+        <p class="section-subtitle">
+          We leverage industry-leading technologies to deliver cutting-edge solutions.
+        </p>
+        
+        <div class="tech-grid">
+          <div class="tech-item">
+            <div class="tech-logo">S</div>
+            <span class="tech-name">Swift</span>
+          </div>
+          <div class="tech-item">
+            <div class="tech-logo">R</div>
+            <span class="tech-name">React</span>
+          </div>
+          <div class="tech-item">
+            <div class="tech-logo">N</div>
+            <span class="tech-name">Node.js</span>
+          </div>
+          <div class="tech-item">
+            <div class="tech-logo">P</div>
+            <span class="tech-name">Python</span>
+          </div>
+          <div class="tech-item">
+            <div class="tech-logo">T</div>
+            <span class="tech-name">TypeScript</span>
+          </div>
+          <div class="tech-item">
+            <div class="tech-logo">A</div>
+            <span class="tech-name">AWS</span>
+          </div>
+          <div class="tech-item">
+            <div class="tech-logo">D</div>
+            <span class="tech-name">Docker</span>
+          </div>
+          <div class="tech-item">
+            <div class="tech-logo">K</div>
+            <span class="tech-name">Kubernetes</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Let's Build Something Amazing</h2>
+        <p class="section-subtitle">
+          Ready to transform your ideas into enterprise-grade software solutions? 
+          Let's discuss your project requirements and create something exceptional together.
+        </p>
+      </div>
+
+      <div class="contact-content">
+        <form class="contact-form" action="mailto:mcornejo@abstraxlab.com" method="get" enctype="text/plain">
+          <div class="form-group">
+            <label for="name" class="form-label">Full Name</label>
+            <input type="text" id="name" name="name" class="form-input" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" id="email" name="email" class="form-input" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="company" class="form-label">Company</label>
+            <input type="text" id="company" name="company" class="form-input">
+          </div>
+          
+          <div class="form-group">
+            <label for="message" class="form-label">Project Details</label>
+            <textarea id="message" name="body" class="form-textarea" 
+                      placeholder="Tell us about your project requirements, timeline, and goals..." required></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+
+        <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color);">
+          <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+            Prefer direct contact?
+          </p>
+          <p>
+            <strong>Email:</strong> 
+            <a href="mailto:mcornejo@abstraxlab.com" style="color: var(--accent-red); text-decoration: none;">
+              mcornejo@abstraxlab.com
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>AbstraX Lab</h3>
+          <p>Enterprise software solutions with 11+ years of proven expertise.</p>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Services</h3>
+          <p><a href="#services">iOS Development</a></p>
+          <p><a href="#services">Web Development</a></p>
+          <p><a href="#services">AI & Machine Learning</a></p>
+          <p><a href="#services">Backend Systems</a></p>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <p><a href="mailto:mcornejo@abstraxlab.com">mcornejo@abstraxlab.com</a></p>
+          <p>Enterprise Software Consulting</p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 AbstraX Lab. All rights reserved. | Innovative Software Solutions</p>
+      </div>
+    </div>
+  </footer>
 
   <script>
-    /* tu JavaScript original sin cambios */
+    // Progress Bar Animation
     function updateProgressBar() {
       const scrollTop = window.pageYOffset;
       const docHeight = document.body.scrollHeight - window.innerHeight;
@@ -226,9 +1046,49 @@
       });
     });
 
-    // … resto de tu JS …
+    // Intersection Observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in-up');
+        }
+      });
+    }, observerOptions);
+
+    // Observe service cards and other elements
+    document.querySelectorAll('.service-card, .stat-item, .tech-item').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Event listeners
     window.addEventListener('scroll', updateProgressBar);
     window.addEventListener('load', updateProgressBar);
+
+    // Form enhancement
+    const form = document.querySelector('.contact-form');
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        // Basic form validation could be added here
+        console.log('Form submitted');
+      });
+    }
+
+    // Header background on scroll
+    let lastScrollY = window.scrollY;
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      if (window.scrollY > 100) {
+        header.style.background = 'rgba(26, 26, 26, 0.98)';
+      } else {
+        header.style.background = 'rgba(26, 26, 26, 0.95)';
+      }
+      lastScrollY = window.scrollY;
+    });
   </script>
 </body>
 </html>
